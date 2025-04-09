@@ -1,9 +1,9 @@
 module.exports = {
     name: "admin",
     description: "Admin commands",
-    async execute({ msg, client }) {
-        const clientNumber = client.info.wid._serialized; // format: "123456789@c.us"
-        const senderNumber = msg.from;
+    async execute(msg, args, commands, client) {
+        const clientNumber = client.info.wid._serialized; // bot's number in full ID format like "123456789@c.us"
+        const senderNumber = msg.from; // sender's number in the same format
 
         if (senderNumber === clientNumber) {
             await msg.reply("✅ You are the bot owner.");
