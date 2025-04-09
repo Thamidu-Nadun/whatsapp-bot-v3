@@ -1,16 +1,25 @@
-module.exports = {
-    name: "admin",
-    description: "Admin commands",
-    async execute(msg, args, commands, client) {
-        const clientNumber = client.info.wid._serialized; // bot's number in full ID format like "123456789@c.us"
-        const senderNumber = msg.from; // sender's number in the same format
+const isAdmin = require("../utils/isAdmin");
 
-        if (senderNumber === clientNumber) {
-            await msg.reply("✅ You are the bot owner.");
-            return true;
-        } else {
-            await msg.reply("❌ You are not authorized to use this command.");
-            return false;
+module.exports = {
+  name: "admin",
+  description: "Admin commands",
+  async execute(msg, args, commands, client) {
+    const admin = await isAdmin.execute(msg, args, commands, client);
+    console.log(admin);
+    if (admin) {
+      if (args.length === 0) {
+        await msg.reply("✅ You are the bot owner.");
+        return 0;
+      } else {
+        console.log(args[0]);
+        if (args[0] === "test") {
+          msg.reply("✅ TODO: Admin Commands.");
         }
+      }
+      return true;
+    } else {
+      await msg.reply("❌ You are not authorized to use this command.");
+      return false;
     }
+  },
 };

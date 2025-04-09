@@ -25,7 +25,6 @@ client.on("ready", () => {
   console.log("Client is ready!");
 });
 
-
 client.on("qr", (qr) => {
   qrcode.generate(qr, { small: true });
 });
