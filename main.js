@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 const commands = new Map();
+let botNumber;
 
 const commandFiles = fs
   .readdirSync(path.join(__dirname, "commands"))
@@ -24,6 +25,7 @@ client.on("ready", () => {
   console.log("Client is ready!");
 });
 
+
 client.on("qr", (qr) => {
   qrcode.generate(qr, { small: true });
 });
@@ -32,7 +34,7 @@ client.on("message_create", async (msg) => {
   console.log(msg.body);
   if (!msg.body.startsWith("/")) return;
 
-  const args = msg.slice(1).split(/ +/);
+  const args = msg.body.slice(1).split(/ +/);
   const commandName = args.shift().toLowerCase();
 
   const command = commands.get(commandName);
@@ -41,9 +43,9 @@ client.on("message_create", async (msg) => {
 
   try {
     if (command.execute.constructor.name === "AsyncFunction") {
-      await command.execute(msg, args, commands);
+      await command.execute(msg, args, commands, client);
     } else {
-      command.execute(msg, args, commands);
+      command.execute(msg, args, commands, client);
     }
   } catch (error) {
     console.error(error);

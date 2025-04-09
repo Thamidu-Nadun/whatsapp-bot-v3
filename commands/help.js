@@ -4,7 +4,7 @@ module.exports = {
   async execute(msg, args, commands) {
     let helpMessage = "📜 *Available Commands:*\n\n";
     commands.forEach((cmd) => {
-      helpMessage += `/${cmd.name} - ${cmd.description}\n`;
+      helpMessage += `/*${cmd.name}* - ${cmd.description}\n`;
     });
 
     await msg.reply(helpMessage);
