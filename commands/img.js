@@ -1,6 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 const { MessageMedia } = require('whatsapp-web.js');
+const { sended } = require("../utils/console-logger");
 
 module.exports = {
     name: "img",
@@ -8,6 +9,7 @@ module.exports = {
     async execute({ msg, args }) {
         if (!args.length) {
             msg.reply("Please provide a search term.");
+            console.log(sended("Please provide a search term.", msg?._data?.to));
             return;
         }
 
@@ -39,11 +41,13 @@ module.exports = {
                         unsafeMime: true,
                     });
                     await msg.reply(imgMedia);
+                    console.log(sended(imgMedia, msg?._data?.to));
                 }
             }
         } catch (error) {
             console.error(error);
             msg.reply("There was an error fetching the images.");
+            console.log(sended("There was an error fetching the images.", msg?._data?.to));
         }
     },
 };
