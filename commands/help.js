@@ -14,7 +14,7 @@ module.exports = {
     console.log(sended(helpMessage, msg?._data?.to));
     logger(
       `Available commands sent to ${msg?._data?.to}: ${helpMessage}`,
-      msg?._data?.to
+      msg?._data?.to,
     );
   },
 };
