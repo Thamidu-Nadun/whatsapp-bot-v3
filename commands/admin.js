@@ -28,7 +28,6 @@ module.exports = {
     } else {
       await msg.reply("❌ You are not authorized to use this command.");
       console.log(sended("❌ You are not authorized to use this command.", msg?._data?.to));
-      logger(`❌ You are not authorized to use this command. to ${msg?._data?.to}`);
       return false;
     }
   },

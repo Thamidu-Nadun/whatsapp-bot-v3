@@ -1,0 +1,47 @@
+[2025-04-11T18:17:48.801Z] Available commands sent to 94758870247@c.us: 📜 *Available Commands:*
+
+/*admin* - Admin commands
+/*alive* - Check if the bot is alive
+/*fruit* - Get a fruit image
+/*help* - List all available commands
+/*img* - Get images from Unsplash
+/*loop_sth* - Loop through something
+/*test* - Test command to check if the bot is working
+
+[2025-04-11T18:19:33.743Z] ✅ Bot is alive! to 94758870247@c.us
+[2025-04-11T18:19:47.716Z] [object Object] 
+ 
+            --------------------------
+            Name: *Apple*
+
+            Family: Rosaceae
+
+            Genus: Malus
+
+            Order: Rosales
+
+            Other Information:
+
+            	Calories: 52 calories
+
+            	Carbohydrates: 11.4 carbohydrates
+
+            	Protein: 0.3 protein
+
+            	Fat: 0.4 fat
+
+            	Sugar: 10.3 sugar
+
+            --------------------------
+            
+[2025-04-11T18:20:05.659Z] Image 1 sent: https://images.unsplash.com/photo-1668554245893-2430d0077217?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzkyODR8MHwxfHNlYXJjaHwxfHxkZXZlbG9wZXJ8ZW58MHx8fHwxNzQ0Mzk1ODE2fDA&ixlib=rb-4.0.3&q=80&w=1080
+[2025-04-11T18:20:08.099Z] Image 2 sent: https://images.unsplash.com/photo-1604964432806-254d07c11f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzkyODR8MHwxfHNlYXJjaHwyfHxkZXZlbG9wZXJ8ZW58MHx8fHwxNzQ0Mzk1ODE2fDA&ixlib=rb-4.0.3&q=80&w=1080
+[2025-04-11T18:20:10.562Z] Image 3 sent: https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzkyODR8MHwxfHNlYXJjaHwzfHxkZXZlbG9wZXJ8ZW58MHx8fHwxNzQ0Mzk1ODE2fDA&ixlib=rb-4.0.3&q=80&w=1080
+[2025-04-11T18:20:12.420Z] Image 4 sent: https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzkyODR8MHwxfHNlYXJjaHw0fHxkZXZlbG9wZXJ8ZW58MHx8fHwxNzQ0Mzk1ODE2fDA&ixlib=rb-4.0.3&q=80&w=1080
+[2025-04-11T18:20:14.504Z] Image 5 sent: https://images.unsplash.com/photo-1587620962725-abab7fe55159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzkyODR8MHwxfHNlYXJjaHw1fHxkZXZlbG9wZXJ8ZW58MHx8fHwxNzQ0Mzk1ODE2fDA&ixlib=rb-4.0.3&q=80&w=1080
+[2025-04-11T18:20:30.671Z] Test command executed successfully.
+[2025-04-11T18:20:41.619Z] Loop message sent: he
+[2025-04-11T18:20:41.736Z] Loop message sent: he
+[2025-04-11T18:20:41.901Z] Loop message sent: he
+[2025-04-11T18:20:41.964Z] Loop message sent: he
+[2025-04-11T18:20:42.054Z] Loop message sent: he
