@@ -1,28 +1,21 @@
-const fs = require("fs");
-const path = require("path");
+const axios = require('axios'); // Make sure axios is installed via npm
 
-const commands = new Map();
-const commandFiles = fs
-    .readdirSync(path.join(__dirname, "commands"))
-    .filter((file) => file.endsWith(".js"));
+const query = "mountains";
+const accessKey = "IV1oMunsUff0vfH4bhmjs-6dw758rnTH4FJYaBtkFWE"; // Get from Unsplash developer dashboard
 
-// console.log(commandFiles)
-
-for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
-    commands.set(command.name, command);
-}
-// console.log(commands)
-var str = "";
-commands.forEach((x) => {
-    // console.log(x.name + ' -> ' + x.description)
-    str += x.name + " -> " + x.description + "\n";
-    // console.log(x.execute)
-});
-
-console.log(str);
-
-// const val = commands.get('test');
-// console.log(val.execute.constructor.name);
-
-// alive -> description
+axios.get(`https://api.unsplash.com/search/photos`, {
+    params: {
+        query: query,
+        per_page: 5
+    },
+    headers: {
+        Authorization: `Client-ID ${accessKey}`
+    }
+})
+    .then(response => {
+        const imageUrls = response.data.results.map(photo => photo.urls.small); // or .regular / .full
+        console.log(imageUrls); // array of image URLs
+    })
+    .catch(error => {
+        console.error("Error fetching images:", error);
+    });

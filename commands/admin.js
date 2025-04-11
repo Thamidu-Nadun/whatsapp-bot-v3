@@ -3,8 +3,8 @@ const isAdmin = require("../utils/isAdmin");
 module.exports = {
   name: "admin",
   description: "Admin commands",
-  async execute(msg, args, commands, client) {
-    const admin = await isAdmin.execute(msg, args, commands, client);
+  async execute({ msg, args, commands, client }) {
+    const admin = await isAdmin.execute({ msg: msg, args: args, commands: commands, client: client });
     console.log(admin);
     if (admin) {
       if (args.length === 0) {

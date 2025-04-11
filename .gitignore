@@ -1,5 +1,6 @@
 node_modules/
 auth/
 .wwebjs_cache/
+.env
 /test.js
 /message.json
