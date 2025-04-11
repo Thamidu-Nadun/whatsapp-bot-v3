@@ -6,3 +6,4 @@
 6. /upload -> RET uploaded file URL
 7. /fruit -> RET fruit details ✅
 8. /Loop -> Loop something may be message or command ✅
+9. Logger -> Log all of the details ✅
