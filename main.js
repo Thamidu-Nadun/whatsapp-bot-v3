@@ -3,6 +3,9 @@ const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const fs = require('fs');
 const path = require('path');
+const chalk = require('chalk');
+
+const { from_to } = require("./utils/console-logger");
 
 
 const commands = new Map();
@@ -44,8 +47,12 @@ client.on('message_create', async msg => {
   try {
 
     if (command.execute.constructor.name === 'AsyncFunction') {
+      from_to(msg?._data?.from, msg?._data?.to);
+
       await command.execute({ msg: msg, args: args, commands: commands, client: client });
     } else {
+      from_to(msg?._data?.from, msg?._data?.to);
+
       command.execute({ msg: msg, args: args, commands: commands, client: client });
     }
   } catch (error) {
