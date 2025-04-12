@@ -1,6 +1,7 @@
 const isAdmin = require("../utils/isAdmin");
 const { sended } = require("../utils/console-logger");
 const logger = require("../utils/logger");
+const { writeLog } = require("../utils/logger-v2");
 
 module.exports = {
   name: "admin",
@@ -18,6 +19,11 @@ module.exports = {
         await msg.reply("✅ You are the bot owner.");
         console.log(sended("✅ You are the bot owner.", msg?._data?.to));
         logger(`✅ You are the bot owner. to ${msg?._data?.to}`);
+        writeLog(
+          `${commands}`,
+          "INFO",
+          `User ${msg?._data?.from} is the bot owner.`,
+        );
 
         return 0;
       } else {
@@ -26,6 +32,11 @@ module.exports = {
           msg.reply("✅ TODO: Admin Commands.");
           console.log(sended("✅ TODO: Admin Commands.", msg?._data?.to));
           logger(`✅ TODO: Admin Commands. to ${msg?._data?.to}`);
+          writeLog(
+            `${commands}`,
+            "INFO",
+            `User ${msg?._data?.from} is testing admin commands.`,
+          );
         }
       }
       return true;
@@ -36,6 +47,11 @@ module.exports = {
           "❌ You are not authorized to use this command.",
           msg?._data?.to,
         ),
+      );
+      writeLog(
+        `${commands}`,
+        "ERROR",
+        `User ${msg?._data?.from} is not authorized to use this command.`,
       );
       return false;
     }

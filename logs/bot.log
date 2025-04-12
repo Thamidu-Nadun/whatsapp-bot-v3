@@ -1,7 +1,7 @@
 ===================================================================
 🤖 WHATSAPP BOT - Bot Logger
 ===================================================================
-📅 Log Start Time     : 2025-04-12T16:53:16.379Z
+📅 Log Start Time     : 2025-04-12T17:01:43.616Z
 🆔 Bot Name           : WhatsAppBot
 🛠️ Version            : 3.0.0
 📍 Component          : [CommandHandler | ImageGenerator | Scheduler | Webhook]
@@ -34,6 +34,12 @@ Useful for:
 
 
 
-[2025-04-12T16:53:16.381Z] [DEBUG] [webhook] - The message
-[2025-04-12T16:53:25.591Z] [INFO] [test] - This is a test log message
-[2025-04-12T16:53:25.591Z] [DEBUG] [webhook] - The message
+[2025-04-12T17:03:36.384Z] [INFO] [alive] - User 94701370247@c.us checked if the bot is alive.
+[2025-04-12T17:03:49.082Z] [INFO] [help] - User 94701370247@c.us requested the list of available commands.
+[2025-04-12T17:04:09.192Z] [ERROR] [[object Map]] - User 94701370247@c.us is not authorized to use this command.
+[2025-04-12T17:04:22.702Z] [INFO] [fruit] - User 94701370247@c.us requested fruit data for apple.
+[2025-04-12T17:05:06.720Z] [INFO] [imagine] - User 94701370247@c.us generated an image for the prompt: "a dog like wolf eating KFC"
+[2025-04-12T17:07:14.013Z] [INFO] [imagine] - User 94701370247@c.us generated an image for the prompt: "a white wolf is eating Sri Lanka rice"
+[2025-04-12T17:08:39.754Z] [INFO] [imagine] - User 94701370247@c.us generated an image for the prompt: "Rosette cookies eat by young man"
+[2025-04-12T17:09:28.964Z] [INFO] [imagine] - User 94701370247@c.us generated an image for the prompt: "oil cake is being eaten by wolf"
+[2025-04-12T17:10:38.891Z] [INFO] [imagine] - User 94701370247@c.us generated an image for the prompt: "oil cake is being eaten by dire wolf"

@@ -1,12 +1,12 @@
-const fs = require('fs');
-const os = require('os');
-const path = require('path');
-const { error, success } = require('./console-logger');
-require('dotenv').config();
+const fs = require("fs");
+const os = require("os");
+const path = require("path");
+const { error, success } = require("./console-logger");
+require("dotenv").config();
 
 const cError = error;
-const logDir = path.join(process.cwd(), 'logs');
-const logFilePath = path.join(logDir, 'whatsapp-bot.log');
+const logDir = path.join(process.cwd(), "logs");
+const logFilePath = path.join(logDir, "bot.log");
 
 const logHeader = `===================================================================
 🤖 WHATSAPP BOT - Bot Logger
@@ -44,42 +44,42 @@ Useful for:
 \n\n`;
 
 function ensureLogDirectory() {
-    const dir = path.dirname(logFilePath);
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-    }
+  const dir = path.dirname(logFilePath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
 }
 
 function isFile(filePath) {
-    try {
-        return fs.statSync(filePath).isFile();
-    } catch (err) {
-        return false;
-    }
+  try {
+    return fs.statSync(filePath).isFile();
+  } catch (err) {
+    return false;
+  }
 }
 
 function writeLog(component, level, message) {
-    ensureLogDirectory();
+  ensureLogDirectory();
 
-    if (!isFile(logFilePath)) {
-        fs.writeFileSync(logFilePath, logHeader + '\n');
+  if (!isFile(logFilePath)) {
+    fs.writeFileSync(logFilePath, logHeader + "\n");
 
-        // console.log(success(`Log file created: ${logFilePath}`));
-        return "Log Header Created";
-    }
+    // console.log(success(`Log file created: ${logFilePath}`));
+    return "Log Header Created";
+  }
 
-    try {
-        const timestamp = new Date().toISOString();
-        const logLine = `[${timestamp}] [${level}] [${component}] - ${message}\n`;
+  try {
+    const timestamp = new Date().toISOString();
+    const logLine = `[${timestamp}] [${level}] [${component}] - ${message}\n`;
 
-        fs.appendFileSync(logFilePath, logLine);
-        // console.log(success(`Log written: ${logLine}`));
-    } catch (error) {
-        cError(`Failed to write log: ${error.message}`);
-        throw error;
-    }
+    fs.appendFileSync(logFilePath, logLine);
+    // console.log(success(`Log written: ${logLine}`));
+  } catch (error) {
+    cError(`Failed to write log: ${error.message}`);
+    throw error;
+  }
 }
 
 module.exports = {
-    writeLog,
+  writeLog,
 };

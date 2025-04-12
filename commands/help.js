@@ -1,5 +1,6 @@
 const { sended } = require("../utils/console-logger");
 const { logger } = require("../utils/logger");
+const { writeLog } = require("../utils/logger-v2");
 
 module.exports = {
   name: "help",
@@ -15,6 +16,11 @@ module.exports = {
     logger(
       `Available commands sent to ${msg?._data?.to}: ${helpMessage}`,
       msg?._data?.to,
+    );
+    writeLog(
+      "help",
+      "INFO",
+      `User ${msg?._data?.from} requested the list of available commands.`,
     );
   },
 };

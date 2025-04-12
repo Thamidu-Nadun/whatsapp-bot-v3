@@ -3,6 +3,7 @@ const axios = require("axios");
 const { MessageMedia } = require("whatsapp-web.js");
 const { sended } = require("../utils/console-logger");
 const { logger } = require("../utils/logger");
+const { writeLog } = require("../utils/logger-v2");
 
 module.exports = {
   name: "fruit",
@@ -12,6 +13,11 @@ module.exports = {
       msg.reply("Please provide a fruit name.");
       console.log(sended("Please provide a fruit name.", msg?._data?.to));
       logger(`Please provide a fruit name.`, msg?._data?.to);
+      writeLog(
+        "fruit",
+        "ERROR",
+        `User ${msg?._data?.from} did not provide a fruit name.`,
+      );
       return;
     }
 
@@ -61,10 +67,20 @@ module.exports = {
         });
         console.log(sended(fruitMedia + "\n" + fruitData, msg?._data?.to));
         logger(`${fruitMedia} \n ${fruitData}`, msg?._data?.to);
+        writeLog(
+          "fruit",
+          "INFO",
+          `User ${msg?._data?.from} requested fruit data for ${fruit_name}.`,
+        );
       } else {
         msg.reply(fruitData);
         console.log(sended(fruitData, msg?._data?.to));
         logger(`(${fruitData}`, msg?._data?.to);
+        writeLog(
+          "fruit",
+          "INFO",
+          `User ${msg?._data?.from} requested fruit data for ${fruit_name}.`,
+        );
       }
     } catch (error) {
       console.error(error);
@@ -73,6 +89,11 @@ module.exports = {
         sended("There was an error fetching the fruit image.", msg?._data?.to),
       );
       logger(`There was an error fetching the fruit image.`, msg?._data?.to);
+      writeLog(
+        "fruit",
+        "ERROR",
+        `User ${msg?._data?.from} encountered an error while fetching fruit data.`,
+      );
     }
   },
 };

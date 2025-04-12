@@ -3,6 +3,7 @@ const axios = require("axios");
 const { MessageMedia } = require("whatsapp-web.js");
 const { sended } = require("../utils/console-logger");
 const { logger } = require("../utils/logger");
+const { writeLog } = require("../utils/logger-v2");
 
 module.exports = {
   name: "img",
@@ -12,6 +13,11 @@ module.exports = {
       msg.reply("Please provide a search term.");
       console.log(sended("Please provide a search term.", msg?._data?.to));
       logger(`Please provide a search term.`, msg?._data?.to);
+      writeLog(
+        "img",
+        "ERROR",
+        `User ${msg?._data?.from} did not provide a search term.`,
+      );
       return;
     }
 
@@ -37,6 +43,11 @@ module.exports = {
           `No images found for your search term: ${searchTerm}`,
           msg?._data?.to,
         );
+        writeLog(
+          "img",
+          "ERROR",
+          `User ${msg?._data?.from} did not find any images for the search term: ${searchTerm}`,
+        );
         return;
       }
 
@@ -49,6 +60,11 @@ module.exports = {
           await msg.reply(imgMedia);
           console.log(sended(imgMedia, msg?._data?.to));
           logger(`Image ${i + 1} sent: ${imageUrl}`, msg?._data?.to);
+          writeLog(
+            "img",
+            "INFO",
+            `User ${msg?._data?.from} received image ${i + 1} for the search term: ${searchTerm}`,
+          );
         }
       }
     } catch (error) {
@@ -58,6 +74,11 @@ module.exports = {
         sended("There was an error fetching the images.", msg?._data?.to),
       );
       logger(`Error fetching images: ${error.message}`, msg?._data?.to);
+      writeLog(
+        "img",
+        "ERROR",
+        `User ${msg?._data?.from} encountered an error while fetching images.`,
+      );
     }
   },
 };

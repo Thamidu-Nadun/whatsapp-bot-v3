@@ -1,4 +1,5 @@
 const { logger } = require("../utils/logger");
+const { writeLog } = require("../utils/logger-v2");
 
 module.exports = {
   name: "test",
@@ -6,6 +7,7 @@ module.exports = {
   async execute() {
     console.log("Hello from the test command!");
     logger("Test command executed successfully.");
+    writeLog("TEST", "DEBUG", "Test command executed successfully.");
     return 0;
   },
 };
