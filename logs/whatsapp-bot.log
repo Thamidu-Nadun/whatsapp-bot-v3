@@ -1,0 +1,39 @@
+===================================================================
+🤖 WHATSAPP BOT - Bot Logger
+===================================================================
+📅 Log Start Time     : 2025-04-12T16:53:16.379Z
+🆔 Bot Name           : WhatsAppBot
+🛠️ Version            : 3.0.0
+📍 Component          : [CommandHandler | ImageGenerator | Scheduler | Webhook]
+📡 Server RAM         : [15.83 GB]
+🧾 Log Level          : [INFO | DEBUG | WARNING | ERROR | CRITICAL]
+📦 Environment        : ["DEVELOPMENT"]
+🔄 Rotation Policy    : Daily @ Midnight (UTC)
+🗂️ Log Format         : log
+🔑 Security           : Access-Controlled | Sensitive Data Masked
+📁 Log File Path      : ["D:\Other\programming\NodeJs\whatsappBots\whatsapp-bot-v3"]
+👨‍💻 Maintainer         : Thamidu Nadun
+📧 Contact            : nadunrz101@gmail.com
+===================================================================
+📝 Description:
+This file logs all runtime events of the WhatsApp bot, including:
+ - Incoming messages from users
+ - Executed commands (e.g., /alive, /imagine)
+ - AI response generation details
+ - Errors, timeouts, or external API issues
+ - Image generation pipeline activity
+
+Useful for:
+ ✅ Debugging command issues
+ ✅ Tracking usage trends
+ ✅ Identifying security anomalies
+ ✅ Monitoring AI/model performance
+===================================================================
+
+[DATE TIME] [LEVEL] [COMPONENT] [MESSAGE]
+
+
+
+[2025-04-12T16:53:16.381Z] [DEBUG] [webhook] - The message
+[2025-04-12T16:53:25.591Z] [INFO] [test] - This is a test log message
+[2025-04-12T16:53:25.591Z] [DEBUG] [webhook] - The message

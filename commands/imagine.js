@@ -1,10 +1,9 @@
-// const { default: axios } = require("axios");
 const consoleLogger = require("../utils/console-logger");
 const { logger } = require("../utils/logger");
 const { MessageMedia } = require("whatsapp-web.js");
 
 module.exports = {
-  name: "gen-img",
+  name: "imagine",
   description: "Generate an image based on a prompt",
   async execute({ msg, args }) {
     const URI = "https://image.pollinations.ai/prompt/";
@@ -12,7 +11,6 @@ module.exports = {
     const url = `${URI}${prompt}`;
 
     try {
-      // const img_response = await axios.get(url);
       const image = await MessageMedia.fromUrl(url, { unsafeMime: true });
       if (image) {
         msg.reply(image, null, {
