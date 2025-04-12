@@ -45,3 +45,19 @@
 [2025-04-11T18:20:41.901Z] Loop message sent: he
 [2025-04-11T18:20:41.964Z] Loop message sent: he
 [2025-04-11T18:20:42.054Z] Loop message sent: he
+[2025-04-12T15:16:42.953Z] ✅ Bot is alive! to 94758870247@c.us
+[2025-04-12T15:16:48.196Z] Available commands sent to 94758870247@c.us: 📜 *Available Commands:*
+
+/*admin* - Admin commands
+/*alive* - Check if the bot is alive
+/*fruit* - Get a fruit image
+/*gen-img* - Generate an image based on a prompt
+/*help* - List all available commands
+/*img* - Get images from Unsplash
+/*loop_sth* - Loop through something
+/*test* - Test command to check if the bot is working
+
+[2025-04-12T15:17:10.639Z] Image sent for prompt: "a cat with ball"
+[2025-04-12T15:17:50.522Z] Image sent for prompt: "a hacker exploit a nasa"
+[2025-04-12T15:18:29.189Z] Image sent for prompt: "elon musk point at NASA"
+[2025-04-12T15:19:16.666Z] Image sent for prompt: "text NADUN in wall photo"
