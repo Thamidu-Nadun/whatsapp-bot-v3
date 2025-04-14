@@ -52,8 +52,7 @@ npm install
 node main.js
 ```
 
-[!TIP]
-
+> [!TIP]
 > 💡 Make sure your terminal is wide enough to view the QR code that logs in to your WhatsApp session!
 
 ## 🧠 How It
