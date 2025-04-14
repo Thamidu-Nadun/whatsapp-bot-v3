@@ -23,6 +23,7 @@ const client = new Client({
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   },
+  // Comment this line to use the default session
   authStrategy: new LocalAuth({
     dataPath: "./auth",
   }),
