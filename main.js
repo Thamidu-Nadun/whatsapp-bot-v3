@@ -19,6 +19,10 @@ for (const file of commandFiles) {
 }
 
 const client = new Client({
+  puppeteer: {
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  },
   authStrategy: new LocalAuth({
     dataPath: "./auth",
   }),
