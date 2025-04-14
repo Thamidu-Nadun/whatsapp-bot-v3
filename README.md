@@ -1,6 +1,6 @@
 # 🤖 WhatsApp Bot v3
 
-![Banner](https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif)
+![Banner](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnk1cHg4dTRwdzNzZXJ5YTA0MGh1d2Rhd2o0eXh3Z2lrOXc1amNqbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dzBLyjVBCtWgGPiXCJ/giphy.gif)
 
 A feature-rich, modular WhatsApp automation bot using Node.js and Puppeteer!  
 Developed with ❤️ by [Thamidu Nadun](https://github.com/Thamidu-Nadun)
