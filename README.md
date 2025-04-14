@@ -68,6 +68,7 @@ Responses are sent through the Puppeteer-controlled browser.
 
 ## 📂 Project Structure
 
+<pre><code>
 whatsapp-bot-v3/
 ├── commands/ # All custom command scripts
 │ └── example.js # Sample command handler
@@ -77,6 +78,7 @@ whatsapp-bot-v3/
 ├── main.js # Main bot script
 ├── package.json # Project metadata
 └── README.md # You are here!
+</code></pre>
 
 ## 🧪 Running Tests
 
