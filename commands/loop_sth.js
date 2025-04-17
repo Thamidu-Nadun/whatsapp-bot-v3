@@ -34,8 +34,8 @@ module.exports = {
 
     for (let i = 0; i < loopCount; i++) {
       await msg.reply(loopMessage);
-      console.log(sended(loopMessage, msg?._data?.to));
     }
+    console.log(sended(`${loopMessage} ${loopCount} Times`, msg?._data?.to));
     writeLog(
       "loop_sth",
       "INFO",

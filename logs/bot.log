@@ -52,3 +52,11 @@ Useful for:
 [2025-04-12T17:38:18.784Z] [INFO] [nasa] - User 94701370247@c.us fetched NASA image of the day: "Moon Near the Edge"
 [2025-04-12T17:39:35.077Z] [INFO] [nasa] - User 94701370247@c.us fetched NASA image of the day: "Moon Near the Edge"
 [2025-04-14T11:32:42.952Z] [INFO] [alive] - User 94701370247@c.us checked if the bot is alive.
+[2025-04-17T10:31:04.509Z] [INFO] [alive] - User 94701370247@c.us checked if the bot is alive.
+[2025-04-17T10:31:15.742Z] [INFO] [loop_sth] - User 94701370247@c.us is going to sent a loop message: hi
+[2025-04-17T10:31:17.073Z] [INFO] [loop_sth] - User 94701370247@c.us has sent a loop message: hi
+[2025-04-17T10:32:52.359Z] [INFO] [loop_sth] - User 94701370247@c.us is going to sent a loop message: 10
+[2025-04-17T10:32:53.131Z] [INFO] [loop_sth] - User 94701370247@c.us has sent a loop message: 10
+[2025-04-17T10:35:08.123Z] [INFO] [loop_sth] - User 94701370247@c.us is going to sent a loop message: hi
+[2025-04-17T10:35:08.874Z] [INFO] [loop_sth] - User 94701370247@c.us has sent a loop message: hi
+[2025-04-17T10:35:32.067Z] [INFO] [help] - User 94701370247@c.us requested the list of available commands.
