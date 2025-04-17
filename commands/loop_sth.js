@@ -1,5 +1,4 @@
 const { sended } = require("../utils/console-logger");
-const { logger } = require("../utils/logger");
 const { writeLog } = require("../utils/logger-v2");
 
 module.exports = {
@@ -14,7 +13,6 @@ module.exports = {
           msg?._data?.to,
         ),
       );
-      logger(`Please provide a number and a message to loop.`, msg?._data?.to);
       writeLog(
         "loop_sth",
         "ERROR",
@@ -28,15 +26,20 @@ module.exports = {
 
     const loopMessage = args.join(" ");
 
+    writeLog(
+      "loop_sth",
+      "INFO",
+      `User ${msg?._data?.from} is going to sent a loop message: ${loopMessage}`,
+    );
+
     for (let i = 0; i < loopCount; i++) {
       await msg.reply(loopMessage);
       console.log(sended(loopMessage, msg?._data?.to));
-      logger(`Loop message sent: ${loopMessage}`, msg?._data?.to);
-      writeLog(
-        "loop_sth",
-        "INFO",
-        `User ${msg?._data?.from} sent a loop message: ${loopMessage}`,
-      );
     }
+    writeLog(
+      "loop_sth",
+      "INFO",
+      `User ${msg?._data?.from} has sent a loop message: ${loopMessage}`,
+    );
   },
 };

@@ -1,5 +1,4 @@
 const consoleLogger = require("../utils/console-logger");
-const { logger } = require("../utils/logger");
 const { MessageMedia } = require("whatsapp-web.js");
 const { writeLog } = require("../utils/logger-v2");
 
@@ -21,7 +20,6 @@ module.exports = {
           `Here is your image for the prompt: "${prompt}"`,
           msg?._data?.to,
         );
-        logger(`Image sent for prompt: "${prompt}"`, msg?._data?.to);
         writeLog(
           "imagine",
           "INFO",
@@ -35,7 +33,6 @@ module.exports = {
         "There was an error fetching the image.",
         msg?._data?.to,
       );
-      logger(`Error fetching image: ${error.message}`, msg?._data?.to);
       writeLog(
         "imagine",
         "ERROR",

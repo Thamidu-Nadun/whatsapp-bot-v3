@@ -2,7 +2,6 @@ require("dotenv").config();
 const axios = require("axios");
 const { MessageMedia } = require("whatsapp-web.js");
 const { sended } = require("../utils/console-logger");
-const { logger } = require("../utils/logger");
 const { writeLog } = require("../utils/logger-v2");
 
 module.exports = {
@@ -12,7 +11,6 @@ module.exports = {
     if (!args.length) {
       msg.reply("Please provide a search term.");
       console.log(sended("Please provide a search term.", msg?._data?.to));
-      logger(`Please provide a search term.`, msg?._data?.to);
       writeLog(
         "img",
         "ERROR",
@@ -39,10 +37,6 @@ module.exports = {
 
       if (images.length === 0) {
         msg.reply("No images found for your search term.");
-        logger(
-          `No images found for your search term: ${searchTerm}`,
-          msg?._data?.to,
-        );
         writeLog(
           "img",
           "ERROR",
@@ -59,7 +53,6 @@ module.exports = {
           });
           await msg.reply(imgMedia);
           console.log(sended(imgMedia, msg?._data?.to));
-          logger(`Image ${i + 1} sent: ${imageUrl}`, msg?._data?.to);
           writeLog(
             "img",
             "INFO",
@@ -73,7 +66,6 @@ module.exports = {
       console.log(
         sended("There was an error fetching the images.", msg?._data?.to),
       );
-      logger(`Error fetching images: ${error.message}`, msg?._data?.to);
       writeLog(
         "img",
         "ERROR",

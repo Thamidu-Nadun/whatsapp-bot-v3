@@ -2,7 +2,6 @@ require("dotenv").config();
 const axios = require("axios");
 const { MessageMedia } = require("whatsapp-web.js");
 const { sended } = require("../utils/console-logger");
-const { logger } = require("../utils/logger");
 const { writeLog } = require("../utils/logger-v2");
 
 module.exports = {
@@ -12,7 +11,6 @@ module.exports = {
     if (!args.length) {
       msg.reply("Please provide a fruit name.");
       console.log(sended("Please provide a fruit name.", msg?._data?.to));
-      logger(`Please provide a fruit name.`, msg?._data?.to);
       writeLog(
         "fruit",
         "ERROR",
@@ -66,7 +64,6 @@ module.exports = {
           caption: fruitData,
         });
         console.log(sended(fruitMedia + "\n" + fruitData, msg?._data?.to));
-        logger(`${fruitMedia} \n ${fruitData}`, msg?._data?.to);
         writeLog(
           "fruit",
           "INFO",
@@ -75,7 +72,6 @@ module.exports = {
       } else {
         msg.reply(fruitData);
         console.log(sended(fruitData, msg?._data?.to));
-        logger(`(${fruitData}`, msg?._data?.to);
         writeLog(
           "fruit",
           "INFO",
@@ -88,7 +84,6 @@ module.exports = {
       console.log(
         sended("There was an error fetching the fruit image.", msg?._data?.to),
       );
-      logger(`There was an error fetching the fruit image.`, msg?._data?.to);
       writeLog(
         "fruit",
         "ERROR",

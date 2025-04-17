@@ -1,6 +1,5 @@
 const isAdmin = require("../utils/isAdmin");
 const { sended } = require("../utils/console-logger");
-const logger = require("../utils/logger");
 const { writeLog } = require("../utils/logger-v2");
 
 module.exports = {
@@ -18,7 +17,6 @@ module.exports = {
       if (args.length === 0) {
         await msg.reply("✅ You are the bot owner.");
         console.log(sended("✅ You are the bot owner.", msg?._data?.to));
-        logger(`✅ You are the bot owner. to ${msg?._data?.to}`);
         writeLog(
           `${commands}`,
           "INFO",
@@ -31,7 +29,6 @@ module.exports = {
         if (args[0] === "test") {
           msg.reply("✅ TODO: Admin Commands.");
           console.log(sended("✅ TODO: Admin Commands.", msg?._data?.to));
-          logger(`✅ TODO: Admin Commands. to ${msg?._data?.to}`);
           writeLog(
             `${commands}`,
             "INFO",

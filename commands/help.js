@@ -1,5 +1,4 @@
 const { sended } = require("../utils/console-logger");
-const { logger } = require("../utils/logger");
 const { writeLog } = require("../utils/logger-v2");
 
 module.exports = {
@@ -13,10 +12,6 @@ module.exports = {
 
     await msg.reply(helpMessage);
     console.log(sended(helpMessage, msg?._data?.to));
-    logger(
-      `Available commands sent to ${msg?._data?.to}: ${helpMessage}`,
-      msg?._data?.to,
-    );
     writeLog(
       "help",
       "INFO",
