@@ -38,7 +38,10 @@ client.on("qr", (qr) => {
 });
 
 client.on("message_create", async (msg) => {
-  console.log(msg.body);
+  if (!msg.fromMe) {
+    console.log(msg.body);
+  }
+
   if (!msg.body.startsWith("/")) return;
 
   const args = msg.body.slice(1).split(/ +/);
